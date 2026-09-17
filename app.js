@@ -108,8 +108,8 @@ if (!calm) {
 
   /* ─── 4. Ошейник затягивается по мере чтения ─── */
   gsap.fromTo('#collar',
-    { scale: 1.14, rotate: -7 },
-    { scale: .93, rotate: 4, ease: 'none',
+    { scale: 1, rotate: -5 },                   // старт не больше 1: иначе бокс шире колонки
+    { scale: .86, rotate: 3, ease: 'none',
       scrollTrigger: { trigger: '.b2b', start: 'top bottom', end: 'bottom top', scrub: .6 } });
 
   /* ─── 5. Полоса сбора: доезжает ровно до восьми процентов ─── */

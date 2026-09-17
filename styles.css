@@ -237,7 +237,7 @@ a{ color:inherit; }
   display:grid; gap:clamp(2.5rem,6vw,5rem); align-items:center;
   grid-template-columns:minmax(0,1fr);
 }
-@media (min-width:62rem){ .b2b__inner{ grid-template-columns:1.1fr .9fr; } }
+@media (min-width:76rem){ .b2b__inner{ grid-template-columns:minmax(0,1.15fr) minmax(19rem,.85fr); } }
 
 .b2b__shout{
   display:inline-block; background:var(--hot); color:#fff;
@@ -257,21 +257,23 @@ a{ color:inherit; }
 .b2b__feats span{ color:#8E97BB; font-size:.95rem; }
 .b2b__legal{ font-size:.85rem; color:#5D6588; margin-bottom:2rem; max-width:42ch; }
 
-.b2b__stage{ margin:0; }
+.b2b__stage{ margin:0; display:grid; justify-items:center; text-align:center; }
+@media (min-width:76rem){ .b2b__stage{ justify-items:start; text-align:left; } }
 .b2b__stage img{
-  width:100%; mix-blend-mode:screen;
+  width:100%; max-width:26rem; mix-blend-mode:screen;
   -webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 50%, #000 60%, transparent 100%);
           mask-image:radial-gradient(ellipse 60% 60% at 50% 50%, #000 60%, transparent 100%);
 }
-.b2b__stage figcaption{ margin-top:1.25rem; font-size:.9rem; color:#6F789E; max-width:30ch; }
+.b2b__stage figcaption{ margin-top:1.25rem; font-size:.9rem; color:#6F789E; max-width:34ch; }
 
 /* ══════════ ОТЗЫВЫ ══════════ */
 .quotes{ padding:var(--bay) 0; background:var(--mist); }
 .quotes__grid{
   margin-top:clamp(2.5rem,5vw,4rem);
-  display:grid; gap:1.25rem;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));
+  display:grid; gap:1.25rem; grid-template-columns:1fr;
 }
+@media (min-width:40rem){ .quotes__grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:76rem){ .quotes__grid{ grid-template-columns:repeat(4,1fr); } }
 .quotes blockquote{
   margin:0; background:var(--paper); padding:2rem 1.75rem 1.5rem;
   border-radius:.4rem; border-top:5px solid var(--price);
@@ -294,9 +296,10 @@ a{ color:inherit; }
 
 .tiers{
   margin-top:clamp(2.5rem,5vw,4rem);
-  display:grid; gap:1.25rem;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,15.5rem),1fr));
+  display:grid; gap:1.25rem; grid-template-columns:1fr;
 }
+@media (min-width:40rem){ .tiers{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:76rem){ .tiers{ grid-template-columns:repeat(4,1fr); } }
 .tier{
   display:flex; flex-direction:column; align-items:flex-start;
   background:var(--paper); border:2px solid var(--mist); border-radius:.4rem;
@@ -510,3 +513,26 @@ a{ color:inherit; }
 }
 .fund .wrap{ position:relative; }
 @media (max-width:52rem){ .burst{ position:static; margin:0 0 1.5rem auto; width:7.5rem; } }
+
+/* ══════════ ЗАЩИТА ОТ ПЕРЕПОЛНЕНИЙ ══════════ */
+/* У grid-элементов min-width по умолчанию auto — они не сжимаются уже контента */
+.hero__grid > *, .calc__grid > *, .calc__out > *, .b2b__inner > *,
+.facts > *, .how__list > *, .quotes__grid > *, .tiers > *{ min-width:0; }
+
+.b2b__name{ font-size:clamp(2rem,.9rem + 5.6vw,4.6rem); }   /* 5.5rem вылезал из колонки на 99px */
+.b2b__stage img{ max-width:min(26rem,100%); }
+.b2b__stage figcaption{ max-width:min(34ch,100%); }
+.calc__slider input[type=range]{ margin:0; max-width:100%; }
+.burst{ max-width:100%; }
+/* Повёрнутая звезда расширяет область прокрутки на ~14px — отодвигаю от края */
+.burst{ right:1rem; }
+@media (max-width:52rem){ .burst{ margin-right:1rem; } }
+/* Неявная колонка figure тянулась к max-content картинки */
+.b2b__stage{ grid-template-columns:minmax(0,1fr); }
+/* Ошейник в скролл-анимации увеличен и повёрнут — обрезаем по секции */
+.b2b{ overflow:hidden; }
+/* Длинное неразрывное слово: кегль привязан к ширине своей колонки, а не к вьюпорту */
+.b2b__copy{ container-type:inline-size; }
+.b2b__name{ font-size:clamp(2rem,10cqw,5rem); }
+/* Заголовок сбора не должен доезжать до звезды в правом верхнем углу */
+@media (min-width:52rem){ .fund .h2{ max-width:17ch; } }
