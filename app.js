@@ -26,6 +26,48 @@ $('#year').textContent = new Date().getFullYear();
   setInterval(() => { if (n > 2) el.textContent = --n; }, 47000);
 })();
 
+/* ─── Калькулятор потерь: работает всегда, это функция, а не украшение ─── */
+(() => {
+  const util = $('#util'), sum = $('#calcsum'), pct = $('#utilval');
+  const verdict = $('#calcverdict'), alt = $('#calcalt');
+  const usd = (n) => '$' + ru.format(Math.round(n));
+
+  const verdictFor = (u) =>
+    u < 40  ? 'Вы платите за инструмент, которым не пользуетесь. У этого есть название: абонемент в спортзал.' :
+    u < 70  ? 'Средний результат. Средний — это не комплимент, это диагноз.' :
+    u < 90  ? 'Близко. Но лимиты не переносятся, а «близко» в отчёт не идёт.' :
+    u < 100 ? 'Почти чисто. Браслет вам всё равно нужен — для стабильности.' :
+              'Идеально. Значит, вы либо врёте, либо уже носите наш браслет.';
+
+  const render = () => {
+    const plan = document.querySelector('input[name=plan]:checked');
+    const u = +util.value;
+    const lost = +plan.value * 12 * (1 - u / 100);
+    const months = Math.floor(lost / 200);
+
+    pct.textContent = u;
+    sum.textContent = usd(lost);
+    verdict.textContent = verdictFor(u);
+    alt.textContent = months >= 1
+      ? `Этих денег хватило бы ещё на ${months} мес. Max 20x, которыми вы бы тоже не воспользовались.`
+      : 'Этого не хватит даже на месяц Max 20x. Хоть что-то вы делаете правильно.';
+  };
+
+  util.addEventListener('input', render);
+  document.querySelectorAll('input[name=plan]').forEach((r) => r.addEventListener('change', render));
+  render();
+})();
+
+/* ─── Кнопка «Разряд всем» ─── */
+$('#zap').addEventListener('click', (e) => {
+  const panel = e.target.closest('.panel');
+  panel.classList.remove('is-zapped');
+  void panel.offsetWidth;                       // перезапуск анимации
+  panel.classList.add('is-zapped');
+  e.target.textContent = 'Разряд подан';
+  setTimeout(() => { e.target.textContent = 'Разряд всем'; }, 2400);
+});
+
 if (!calm) {
   gsap.registerPlugin(ScrollTrigger);
 
