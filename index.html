@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ДОЖИМ — браслет, который не даст подписке на Claude Code сгореть впустую</title>
+<meta name="description" content="Носимое устройство, которое бьёт вас током, когда вы не выжимаете оплаченный лимит Claude Code и Codex. Для юрлиц — ошейник УТИЛИЗАТОР. Идёт сбор средств.">
+<meta property="og:title" content="ДОЖИМ — дисциплина расхода лимитов">
+<meta property="og:description" content="Max 20x — 200 долларов в месяц. Вы выбираете треть. Мы это исправим.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Golos+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#glavnoe">К содержанию</a>
+
+<!-- ─────────── ЭФИР ─────────── -->
+<header class="hero" id="glavnoe">
+  <div class="hero__noise" aria-hidden="true"></div>
+
+  <div class="onair"><span class="onair__in">
+    <span class="onair__dot" aria-hidden="true"></span>
+    Прямой эфир
+    <span class="onair__sep" aria-hidden="true"></span>
+    Телемагазин
+  </span></div>
+
+  <h1 class="wordmark">
+    <svg class="wordmark__svg" viewBox="0 0 1000 212" role="img" aria-label="Дожим" focusable="false">
+      <defs>
+        <linearGradient id="chrome" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#FFFFFF"/>
+          <stop offset="46%"  stop-color="#EDF2FF"/>
+          <stop offset="47%"  stop-color="#9FB4EE"/>
+          <stop offset="100%" stop-color="#7C93DC"/>
+        </linearGradient>
+      </defs>
+      <text x="0" y="188" textLength="1000" lengthAdjust="spacing" fill="url(#chrome)">ДОЖИМ</text>
+    </svg>
+  </h1>
+
+  <div class="hero__grid">
+    <div class="hero__text">
+      <p class="hero__lead">Вы платите $200 в месяц за Claude Code. Выбираете треть. Браслет напомнит вам об этом — через кожу.</p>
+
+      <div class="hero__buy">
+        <div class="pricetag">
+          <span class="pricetag__old">49&nbsp;990&nbsp;₽</span>
+          <span class="pricetag__new">24&nbsp;990&nbsp;₽</span>
+          <span class="pricetag__note">цена предзаказа</span>
+        </div>
+        <a class="btn btn--big" href="#sbor">Вложиться в разряд</a>
+      </div>
+      <p class="hero__scarcity" id="ostatok">Осталось <b>7</b> из 500 по цене предзаказа</p>
+    </div>
+
+    <figure class="hero__stage">
+      <img class="hero__host" src="assets/host.webp" alt="Ведущий телемагазина в белом халате показывает на браслет" width="1800" height="1344">
+      <img class="hero__product" src="assets/bracelet.webp" alt="Браслет ДОЖИМ: белый корпус, хромированный ободок, стальные электроды" width="1400" height="1400">
+      <div class="spark" aria-hidden="true"></div>
+    </figure>
+  </div>
+</header>
+
+<!-- ─────────── ПРОБЛЕМА ─────────── -->
+<section class="strip" aria-hidden="true"><div class="strip__run"><span>Max 20x — $200 в месяц. Вы отрабатываете треть. Разницу вы дарите Anthropic.&nbsp;Max 20x — $200 в месяц. Вы отрабатываете треть. Разницу вы дарите Anthropic.&nbsp;</span><span>Max 20x — $200 в месяц. Вы отрабатываете треть. Разницу вы дарите Anthropic.&nbsp;Max 20x — $200 в месяц. Вы отрабатываете треть. Разницу вы дарите Anthropic.&nbsp;</span></div></section>
+
+<section class="problem" id="problema">
+  <div class="wrap">
+    <h2 class="h2">Каждую ночь ваш лимит обнуляется.<br>Молча. Без предупреждения. Без боли.</h2>
+    <p class="problem__kicker">Последнее мы считаем недоработкой.</p>
+
+    <div class="burn" id="burn">
+      <div class="burn__num"><span id="burncount">812 470 000 000</span></div>
+      <p class="burn__cap">токенов Claude Code и Codex сгорело у российских разработчиков с начала года. Ни один из них ничего не почувствовал.</p>
+      <div class="burn__bar"><i id="burnbar"></i></div>
+      <dl class="facts">
+      <div><dt>Claude Max 20x</dt><dd>$200 в месяц. От 240 до 480 часов Sonnet и от 24 до 40 часов Opus в неделю — если выбрать всё до дна.</dd></div>
+      <div><dt>ChatGPT Pro</dt><dd>$249 в месяц с 15 июня 2026 года. 200 запросов к GPT-6 Pro в неделю. Неиспользованные не переносятся.</dd></div>
+      <div><dt>Ваша утилизация</dt><dd>31,4%. Это $1&nbsp;646 в год, которые вы платите за то, что легли спать.</dd></div>
+    </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── ДО / ПОСЛЕ ─────────── -->
+<section class="ba">
+  <div class="wrap">
+    <h2 class="h2 h2--center">К третьему дню вы перестаёте спорить</h2>
+    <div class="ba__pair">
+      <figure class="ba__card ba__card--before">
+        <img src="assets/before.webp" alt="Усталый разработчик сидит за захламлённым столом, обхватив голову руками" width="1500" height="1120" loading="lazy">
+        <figcaption>
+          <b>До</b>
+          <span>Утилизация 31%. Спит по восемь часов. Считает, что заслужил.</span>
+        </figcaption>
+      </figure>
+      <div class="ba__arrow" aria-hidden="true">⚡</div>
+      <figure class="ba__card ba__card--after">
+        <img src="assets/after.webp" alt="Тот же разработчик ликует за чистым столом, на запястье браслет" width="1500" height="1120" loading="lazy">
+        <figcaption>
+          <b>После</b>
+          <span>Утилизация 99,8%. Спит по четыре. Больше не считает.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── КАК РАБОТАЕТ ─────────── -->
+<section class="how" id="kak">
+  <div class="wrap">
+    <h2 class="h2">Три действия. Одно из них ваше.</h2>
+    <ol class="how__list">
+      <li class="how__step">
+        <span class="how__n">Шаг 1</span>
+        <h3>Следит</h3>
+        <p>Каждые пятнадцать минут читает остаток лимита Claude Code и Codex и сверяет с оплаченным. Отключения не предусмотрено: отключение — это и есть неисправность.</p>
+      </li>
+      <li class="how__step">
+        <span class="how__n">Шаг 2</span>
+        <h3>Считает</h3>
+        <p>Прогнозирует, сколько часов Opus сгорит к сбросу недельного окна при вашем темпе. Темп меняется редко. Человек — чаще.</p>
+      </li>
+      <li class="how__step">
+        <span class="how__n">Шаг 3</span>
+        <h3>Бьёт</h3>
+        <p>Прогноз хуже пяти процентов — разряд. Четырнадцать миллиампер, каждые двадцать минут. До полуночи или до исправления — что наступит раньше, решаете не вы.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─────────── УТИЛИЗАТОР ─────────── -->
+<section class="b2b" id="utilizator">
+  <div class="b2b__inner">
+    <div class="b2b__copy">
+      <p class="b2b__shout">Но&nbsp;это ещё не&nbsp;всё</p>
+      <h2 class="b2b__name">УТИЛИЗАТОР</h2>
+      <p class="b2b__lead">Ваши разработчики сидят на Max 20x за ваш счёт и выбирают треть. Платите вы. Больно при этом им.</p>
+      <ul class="b2b__feats">
+        <li><b>Групповой разряд</b><span>Отстал один — получает отдел. Дальше коллектив разбирается сам. Обычно двое суток.</span></li>
+        <li><b>Единая панель</b><span>Разряд по кнопке, по расписанию или автоматически по отчёту. Сотрудник не знает, какой из трёх.</span></li>
+        <li><b>Выгрузка в 1С</b><span>Разряды пишутся в личное дело. При увольнении выгружаются в справку.</span></li>
+        <li><b>Совет директоров</b><span>Ежемесячный отчёт: недобранные часы Opus, киловатт-часы на сотрудника, антилидеры.</span></li>
+      </ul>
+      <p class="b2b__legal">Сила разряда не превышает норм. Нормы устанавливаем мы.</p>
+      <a class="btn btn--ghost" href="#sbor">Запросить смету на отдел</a>
+    </div>
+    <figure class="b2b__stage">
+      <img id="collar" src="assets/collar.webp" alt="Ошейник УТИЛИЗАТОР: чёрный корпус, стальные электроды, красный индикатор" width="1400" height="1400" loading="lazy">
+      <figcaption>Ошейник УТИЛИЗАТОР&nbsp;Pro. Размеры S–XXL. Замок без внутреннего механизма: изнутри не&nbsp;открывается.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ─────────── ОТЗЫВЫ ─────────── -->
+<section class="quotes">
+  <div class="wrap">
+    <h2 class="h2 h2--center">Говорят участники закрытого теста</h2>
+    <div class="quotes__grid">
+      <blockquote><p>Выжимаю сто процентов с ноября. Жена ушла, лимиты чистые.</p><cite>Артём, 31, фулстек</cite></blockquote>
+      <blockquote><p>Раньше засыпал в двадцать три сорок. Теперь не засыпаю.</p><cite>Кирилл, 27, фронтенд</cite></blockquote>
+      <blockquote><p>Надели ошейники на весь отдел. Утилизация девяносто семь, текучка сорок. Оставшиеся работают за троих.</p><cite>Светлана, 44, технический директор</cite></blockquote>
+      <blockquote><p>Дочь спросила, что у меня на руке. Я ответил: подписка.</p><cite>Дмитрий, 35, бэкенд</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── СБОР ─────────── -->
+<section class="fund" id="sbor">
+  <div class="wrap">
+    <h2 class="h2">Сначала вы вкладываетесь.<br>Потом мы производим. Потом вы работаете эффективно.</h2>
+    <p class="fund__order">Именно в таком порядке. Обратного хода нет ни на одном из трёх этапов.</p>
+
+    <div class="fund__meter">
+      <div class="fund__nums">
+        <span class="fund__got"><b id="raised">3&nbsp;218&nbsp;400</b> ₽ собрано</span>
+        <span class="fund__goal">цель 40 000 000 ₽</span>
+      </div>
+      <div class="fund__bar"><i id="fundbar" style="width:8%"></i></div>
+      <p class="fund__meta"><b>1 284</b> вкладчика · до конца сбора <b>19 дней</b></p>
+    </div>
+
+    <div class="tiers">
+      <article class="tier">
+        <p class="tier__price">990&nbsp;₽</p>
+        <h3 class="tier__name">Спасибо</h3>
+        <p class="tier__what">Имя в списке вкладчиков, шрифт шесть пунктов. Устройства не будет. Разряда тоже — вы его не заслужили.</p>
+        <a class="btn btn--sm" href="#final">Выбрать</a>
+      </article>
+      <article class="tier tier--hot">
+        <p class="tier__flag">Берут чаще всего</p>
+        <p class="tier__price">24&nbsp;990&nbsp;₽</p>
+        <h3 class="tier__name">ДОЖИМ</h3>
+        <p class="tier__what">Браслет первой партии, кабель, электроды на три месяца. Дальше покупаете сами: расход выше расчётного.</p>
+        <a class="btn btn--sm" href="#final">Выбрать</a>
+      </article>
+      <article class="tier">
+        <p class="tier__price">149&nbsp;000&nbsp;₽</p>
+        <h3 class="tier__name">УТИЛИЗАТОР: отдел</h3>
+        <p class="tier__what">Двенадцать ошейников, панель, обучение руководителя. Ключ один. Копий не выдаём даже по запросу.</p>
+        <a class="btn btn--sm" href="#final">Выбрать</a>
+      </article>
+      <article class="tier">
+        <p class="tier__price">1&nbsp;490&nbsp;000&nbsp;₽</p>
+        <h3 class="tier__name">Имени вас</h3>
+        <p class="tier__what">Первый разряд серийной партии назовут вашим именем. Сертификат в рамке. Ужин с изобретателем — он будет в ошейнике.</p>
+        <a class="btn btn--sm" href="#final">Выбрать</a>
+      </article>
+    </div>
+    <p class="fund__fine">Средства не возвращаются. Разряды не возвращаются тем более.</p>
+  </div>
+</section>
+
+<!-- ─────────── ВОПРОСЫ ─────────── -->
+<section class="faq">
+  <div class="wrap wrap--narrow">
+    <h2 class="h2">Частые вопросы</h2>
+    <dl class="faq__list">
+      <div><dt>Какие подписки поддерживаются?</dt><dd>Claude Pro, Max 5x, Max 20x, ChatGPT Plus и Pro, Codex. Корпоративные ключи — только в версии УТИЛИЗАТОР.</dd></div>
+      <div><dt>Это законно?</dt><dd>Мы направили запрос. Ответа пока нет. Сбор средств продолжается.</dd></div>
+      <div><dt>Браслет можно снять?</dt><dd>Физически — да. Один раз. Повторная установка платная.</dd></div>
+      <div><dt>У меня нет подписки. Он будет бить?</dt><dd>Будет. Просто так. Мы называем это профилактикой.</dd></div>
+      <div><dt>Я и так выжимаю сто процентов.</dt><dd>Тогда разряды будут поощрительными. Ощущения при этом те же.</dd></div>
+      <div><dt>Есть режим для детей?</dt><dd>Есть. Шесть миллиампер.</dd></div>
+      <div><dt>Что если отключат электричество?</dt><dd>Аккумулятор держит четырнадцать суток. Отключение электроэнергии не является уважительной причиной.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ─────────── ФИНАЛ ─────────── -->
+<section class="final" id="final">
+  <div class="wrap wrap--narrow">
+    <h2 class="final__h">Дожми.<br>До конца.</h2>
+    <a class="btn btn--big btn--light" href="#sbor">Вложиться в разряд</a>
+    <p class="final__sub">Первым ста вкладчикам — второй комплект электродов в подарок.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__brand">ДОЖИМ<span>⚡</span></p>
+    <p class="foot__disc">Дожим — это не мотивация. Мотивация не работает.</p>
+    <p class="foot__meta">ООО «Дожим» · <span id="year"></span> · Все разряды защищены</p>
+  </div>
+</footer>
+
+<!-- ─────────── ЭФИРНАЯ ПЛАШКА ─────────── -->
+<div class="lower" id="lower">
+  <div class="lower__in">
+    <span class="lower__label">Заказ до конца эфира</span>
+    <time class="lower__time" id="clock">14:59</time>
+    <span class="lower__price"><s>49&nbsp;990&nbsp;₽</s> <b>24&nbsp;990&nbsp;₽</b></span>
+    <a class="btn btn--sm btn--hot" href="#sbor">Вложиться</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
